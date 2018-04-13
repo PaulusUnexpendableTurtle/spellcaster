@@ -1,0 +1,19 @@
+{
+  "name": "spellcaster",
+  "version": "1.0.0",
+  "description": "multiplayer card game about casting spells",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulusUnexpendableTurtle/spellcaster.git"
+  },
+  "author": "PaulusUnexpendableTurtle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulusUnexpendableTurtle/spellcaster/issues"
+  },
+  "homepage": "https://github.com/PaulusUnexpendableTurtle/spellcaster#readme"
+}
