@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/PaulusUnexpendableTurtle/spellcaster#readme",
   "dependencies": {
+    "express": "^4.16.3",
     "papaparse": "^4.3.7",
     "socket.io": "^2.1.0"
   }
