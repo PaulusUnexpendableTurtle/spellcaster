@@ -4,10 +4,10 @@ const express = require('express'),
       io = require('socket.io')(server);
 
 const table_names = [],
-      parser = require('/lib/parser.js')(require('fs'), require('papaparse'), table_names);
+      parser = require('./lib/parser')(require('fs'), require('papaparse'), table_names);
 
 app.get('/', (req, res) => {
-	res.sendFile(__dirname + '/index.html');
+	res.sendFile(__dirname + '/client/index.html');
 });
 app.use('/client', express.static(__dirname + '/client'));
 
