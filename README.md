@@ -4,6 +4,8 @@ multiplayer card game about casting spells
 # What should it do
 Server:
 
+Important: need to organize queue/stack to deal with this sh#t
+
 0. independent from type of connection (e.g. browser/app)
 1. register players
 2. pair players
