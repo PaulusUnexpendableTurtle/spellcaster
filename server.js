@@ -3,8 +3,25 @@ const express = require('express'),
       server = require('http').Server(app),
       io = require('socket.io')(server);
 
-const table_names = [],
-      parser = require('./lib/parser')(require('fs'), require('papaparse'), table_names);
+const table_names =
+	[
+		{
+			name: 'cardData',
+			header: true
+		},
+		{
+			name: 'gameData',
+			header: true
+		},
+		{
+			name: 'eventData',
+			header: true
+		},
+		{
+			name: 'sampleDecks'
+		}
+	],
+	parser = require('./lib/parser')(require('fs'), require('papaparse'), table_names);
 
 app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/client/index.html');
@@ -21,7 +38,10 @@ io.sockets.on('connection', (socket) => {
 		eventHandler = require('./lib/event')({
 			cardPool: require('./lib/game/card')(parser.get('cardData')),
 			Player: require('./lib/game/player'),
-			Game: require('./lib/game/game')
+			Game: require('./lib/game/game'),
+			gameOptions: parser.get('gameData'),
+			gameEventTree: parser.get('eventData'),
+			sampleDecks: parser.get('sampleDecks')
 		});
 	eventHandler.work(socket);
 });
