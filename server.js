@@ -28,10 +28,9 @@ app.get('/', (req, res) => {
 });
 app.use('/client', express.static(__dirname + '/client'));
 
-server.listen(process.env.PORT || 8080);
-
 var eventHandler;
 io.sockets.on('connection', (socket) => {
+	console.log('connection');
 	if (!parser.complete())
 		return;
 	if (!eventHandler)
@@ -45,3 +44,5 @@ io.sockets.on('connection', (socket) => {
 		});
 	eventHandler.work(socket);
 });
+
+server.listen(process.env.PORT || 8000);
