@@ -36,8 +36,10 @@ app.use('/client', express.static(__dirname + '/client'));
 var eventHandler;
 io.sockets.on('connection', (socket) => {
 	console.log('connection');
-	if (!parser.complete())
+	if (!parser.complete()) {
+		socket.emit('server not ready');
 		return;
+	}
 	if (!eventHandler)
 		eventHandler = new EventHandler({
 			cardPool: new CardPool(parser.get(table_names[0].name)),
