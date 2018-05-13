@@ -42,7 +42,11 @@ io.sockets.on('connection', (socket) => {
 	}
 	if (!eventHandler)
 		eventHandler = new EventHandler({
-			cardPool: new CardPool(parser.get(table_names[0].name)),
+			cardPool: new CardPool(parser.get(table_names[0].name), ','),
+			subSplitter: '|',
+			cardPoolPoster: (card) => {
+				//TODO
+			},
 			Player: require('./lib/game/player'),
 			Game: require('./lib/game/game'),
 			gameOptions: parser.get(table_names[1].name),
