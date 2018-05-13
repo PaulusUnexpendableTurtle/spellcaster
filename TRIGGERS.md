@@ -16,8 +16,22 @@ List of possible triggers
 + 'turn end' [player] - obvious
 + 'life changed' [sign, player] - obvious
 
++ also '... notarget'
+
 Regulating events
 -----------------
 
 + 'reveal' - if event is revealing contents of sources
 + 'lock' - if targets are needed to be chosen
+
++ 'bindee' - if needs targets
+
++ 'no target' - obvious
+
++ 'player' - type of target
++ 'owner' - ... (same)
++ 'queue' - ... (same)
++ 'card' - ... (same)
++ 'card in hand' - ... (same)
++ 'trigger' - ... (same)
++ 'sign' - ... (same)
